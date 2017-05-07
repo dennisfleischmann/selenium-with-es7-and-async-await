@@ -27,7 +27,7 @@ Tested with the following setup. Make sure you have the correct browser verion i
 | IE        | 11+                                                             |
 
 
-## Installion
+## Installation
 
 * Chrome/IE: Zoom <code>levels</code> and your text size in your browser is set to <code>default</code>.
 * IE: Internetoptions -> Security -> Zones -> Either you uncheck all zones or you check all zones.
