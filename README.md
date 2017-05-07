@@ -32,8 +32,9 @@ Tested with the following setup. Make sure you have the correct browser verion i
 * Chrome/IE: Zoom <code>levels</code> and your text size in your browser is set to <code>default</code>.
 * IE: Internetoptions -> Security -> Zones -> Either you uncheck all zones or you check all zones.
 
-<pre><code>npm run start:selenium:chrome</code></pre>
+<pre><code>yarn install</code></pre>
 
+## Run
+<pre><code>yarn run start:selenium:chrome</code></pre>
 or
-
-<pre><code>npm run start:selenium:ie</code></pre>
+<pre><code>yarn run start:selenium:ie</code></pre>
