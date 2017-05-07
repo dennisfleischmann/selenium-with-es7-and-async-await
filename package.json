@@ -1,0 +1,19 @@
+{
+  "name": "selenium-with-javascript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start:selenium:chrome": "node ./node_modules/mocha/bin/mocha --compilers js:babel-core/register tests/*.selenium.js --browser chrome",
+    "start:selenium:ie": "node ./node_modules/mocha/bin/mocha --compilers js:babel-core/register tests/*.selenium.js --browser ie"
+  },
+  "dependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "chai": "^3.5.0",
+    "minimist": "^1.2.0",
+    "mocha": "^3.3.0",
+    "selenium-webdriver": "^3.4.0"
+  }
+}
