@@ -1,6 +1,24 @@
 ## Introduction
 
-Add Selenium tests to your project using your daily language JAVASCRIPT/ES6 or even Typescript. The Example is primarly based on javascript libraries. We will use async/await in this example to avoid the well known "callback" hell.
+e2e tests is a tool which should not miss in any project which must meet enterprise requirements. Using Selemium tests is nowdays a market standard which is wildey used among many projects. Unfortunteley often times projects find themself in the [Callback Hell](http://callbackhell.com/).
+
+Fortunately with the EcmaScript2017 specification `async` and `await` is  coming along which will help us reducing this headcache and gain clearity about our tests again.
+
+```javascript
+  it('should google for react', mochaAsync ( async () => {
+  
+    await driver.get('http://www.google.de/');
+    await driver.findElement(By.name('q')).sendKeys('react')
+    await driver.findElement(By.name('btnG')).click();
+    await driver.wait(until.elementLocated(By.linkText(firstLink)));
+    await driver.findElement(By.linkText(firstLink)).click();
+    await driver.quit();
+    
+  }));
+
+```
+
+## Used Node Modules
 
 
 | node_module           | Description                                           |
@@ -10,6 +28,7 @@ Add Selenium tests to your project using your daily language JAVASCRIPT/ES6 or e
 | mocha                 | Test Runner (describe,it,before,after,...)            
 
 
+## Selenium Webdriver
 
 In order to communicate with the browser it is necessary to give selenium-driver the appropriate driver for each browser.
 
@@ -18,6 +37,8 @@ In order to communicate with the browser it is necessary to give selenium-driver
 | chrome                | chromedriver.exe (win) chromdriver (OSX)              |
 | IE                    | IEDriverServer.exe (only win)                         |
 | firefox               | geckodriver.exe (win)          
+
+## Example Browsers
 
 Tested with the following setup. Make sure you have the correct browser verion installed on your machine
 

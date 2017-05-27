@@ -19,7 +19,7 @@ describe(`Sample Test - [${targetBrowser}]`, function() {
   /**
    * Extend timeout for mocha
    */
-  this.timeout(30000);
+  this.timeout(10000);
   
   it('should google for react', mochaAsync ( async () => {
     await driver.get('http://www.google.de/');
