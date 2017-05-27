@@ -1,8 +1,8 @@
 ## Introduction
 
-e2e tests is a tool which should not miss in any project which must meet enterprise requirements. Using Selemium tests is nowdays a market standard which is wildey used among many projects. Unfortunteley often times projects find themself in the [Callback Hell](http://callbackhell.com/).
+e2e tests is a tool which should not miss in any project meeting enterprise requirements. Using Selenium tests is nowadays a market standard widley used among many projects. Unfortunteley projects find themself in the [Callback Hell](http://callbackhell.com/) a lot.
 
-Fortunately with the EcmaScript2017 specification `async` and `await` is  coming along which will help us reducing this headcache and gain clearity about our tests again.
+Fortunately with the EcmaScript 2017 specification `async` and `await` operators  are coming along which will help us reducing this headcache and gain clearity about our tests again.
 
 ```javascript
   it('should google for react', mochaAsync ( async () => {
