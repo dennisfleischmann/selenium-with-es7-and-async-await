@@ -1,6 +1,6 @@
 ## Introduction
 
-Add Selenium tests to your project using your daily language JAVASCRIPT/ES6 or even Typescript. The Example is primarly based on javascript libraries. 
+Add Selenium tests to your project using your daily language JAVASCRIPT/ES6 or even Typescript. The Example is primarly based on javascript libraries. We will use async/await in this example to avoid the well known "callback" hell.
 
 
 | node_module           | Description                                           |

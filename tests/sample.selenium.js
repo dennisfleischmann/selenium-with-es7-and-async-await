@@ -1,37 +1,32 @@
 import { describe, it } from 'mocha';
 import { By, key, until } from 'selenium-webdriver';
+import { expect } from 'chai'
 import { configureDriver, targetBrowser } from '../utils/core';
+import mochaAsync from '../utils/mochaAsync';
+/**
+ * polyfil for async/await feature which is part of ES2017
+ */
+require("babel-polyfill");
 
 const driver = configureDriver();
 
-describe(`Sample Test - [${targetBrowser}]`, function() {
+/**
+ * When the link is not found make sure the link did not change
+ */
+const firstLink = 'React - A JavaScript library for building user interfaces - Facebook Code';
 
+describe(`Sample Test - [${targetBrowser}]`, function() {
   /**
    * Extend timeout for mocha
    */
-  this.timeout(20000);
+  this.timeout(30000);
   
-  it('should google for react', (done) => {
-
-    driver.get('http://www.google.de/')
-      .then(function() {
-        driver.findElement(By.name('q')).sendKeys('react')
-          .then(function() {
-            driver.findElement(By.name('btnG')).click();
-            driver.wait(until.elementLocated(By.linkText('A JavaScript library for building user interfaces - React - Facebook Code')))
-            .then(function() {
-              driver.findElement(By.linkText('A JavaScript library for building user interfaces - React - Facebook Code')).click()
-                .then(function() {
-                  driver.sleep(5000)
-                    .then(function() {
-                      driver.quit()
-                        .then(function() {
-                          done();
-                        });
-                    });
-                });
-            });
-          });
-      });
-  });
+  it('should google for react', mochaAsync ( async () => {
+    await driver.get('http://www.google.de/');
+    await driver.findElement(By.name('q')).sendKeys('react')
+    await driver.findElement(By.name('btnG')).click();
+    await driver.wait(until.elementLocated(By.linkText(firstLink)));
+    await driver.findElement(By.linkText(firstLink)).click();
+    await driver.quit();
+  }));
 });
